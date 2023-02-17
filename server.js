@@ -22,13 +22,12 @@ const corsOpts = {
     'PATCH',
     'DELETE'
   ],
- exposedHeaders: ['sessionId'],
+
   
   allowedHeaders: [
-    'sessionId',
-    'Content-Type'
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   ],
-  preflightContinue: false
+ 
 };
 // Default configuration looks like
 // {
