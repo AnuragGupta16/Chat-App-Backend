@@ -31,11 +31,12 @@ const corsOpts = {
 //     "preflightContinue": false,
 //     "optionsSuccessStatus": 204
 //   }
-app.use(cors(corsOpts));
-app.use(cors(corsOptions))
+
 dotenv.config();
 connectDB();
 const app = express();
+app.use(cors(corsOpts));
+app.use(cors(corsOptions))
 
 app.use(express.json()); // to accept json data
 
