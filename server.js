@@ -18,11 +18,17 @@ const corsOpts = {
   methods: [
     'GET',
     'POST',
+    'PUT',
+    'PATCH',
+    'DELETE'
   ],
-
+ exposedHeaders: ['sessionId'],
+  
   allowedHeaders: [
-    'Content-Type',
+    'sessionId',
+    'Content-Type'
   ],
+  preflightContinue: false
 };
 // Default configuration looks like
 // {
