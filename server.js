@@ -85,7 +85,10 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.ALLOWED_CLIENTS.split(',')
+    origin: process.env.ALLOWED_CLIENTS.split(','),
+    allowedHeaders: [
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  ],
     // credentials: true,
   },
 });
