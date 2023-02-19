@@ -9,7 +9,7 @@ const path = require("path");
 const cors = require('cors');
 // Cors 
 const corsOptions = {
-  origin:"http://localhost:3000"
+  origin:process.env.ALLOWED_CLIENTS.split(',')
   // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 }
 const corsOpts = {
@@ -85,7 +85,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin:"http://localhost:3000"
+    origin:process.env.ALLOWED_CLIENTS.split(',')
    
     // credentials: true,
   }
