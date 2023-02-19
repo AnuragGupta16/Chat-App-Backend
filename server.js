@@ -85,7 +85,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://0talk-a-tive0.netlify.app",
+    origin: process.env.ALLOWED_CLIENTS.split(',')
     // credentials: true,
   },
 });
